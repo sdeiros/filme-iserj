@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrossel Vertical</title>
+    <title>Feira de Ciências e Tecnologias</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
       <!-- Inclua o link para o Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
+      <style>
         body {
             margin: 0;
             overflow: hidden;
@@ -21,8 +27,7 @@
             font-family: 'Inter', Arial, sans-serif;
             background-color: #000;
         }
-        
-        /* Barra de navegação semelhante à Netflix */
+
         .navbar {
             background-color: transparent;
             padding: 10px 0;
@@ -40,9 +45,9 @@
             max-width: 100px;
             height: auto;
         }
-        /* Estilo personalizado para o carrossel vertical */
+
         .carousel-vertical {
-            width: 400px; /* Defina a largura desejada para o carrossel */
+            width: 400px; 
             height: auto;
             overflow: visible;
             white-space: nowrap;
@@ -59,7 +64,7 @@
         
         .carousel-item {
             flex: 0 0 auto;
-            width: 100%; /* Defina a largura desejada para cada item do carrossel */
+            width: 100%; 
             padding: 0 15px;
             text-align: center;
         }
@@ -67,10 +72,9 @@
         .carousel-item img {
             max-width: 100%;
             height: auto;
-            border-radius: 8px; /* Adicione cantos arredondados às imagens */
+            border-radius: 8px; 
         }
 
-        /* Estilize os botões de navegação do carrossel */
         .carousel-control-prev,
         .carousel-control-next {
             background-color: rgba(0, 0, 0, 0.3);
@@ -82,7 +86,7 @@
             color: #fff;
         }
         
-             #splash-screen {
+        #splash-screen {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -98,34 +102,49 @@
             z-index: 2;
             margin: 0;
             padding: 0;
+            animation: fadeIn 1s ease-in forwards; 
         }
         
-        .centered-content {
-            text-align: center;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
-        .centered-content img.logo {
-            display: block;
-            margin: 0 auto;
-            max-width: 100px;
-            height: auto;
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                display: none; 
+            }
         }
 
-        .centered-content h1 {
-            margin-top: 20px;
-            color: #fff;
+        #splash-screen.fade-in {
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        #splash-screen.fade-out {
+            animation: fadeOut 1s ease-in forwards;
+        }
+
+        #myCarousel {
+            display: none;
         }
         
-         /* Estilos para os botões de assistir */
         .botao {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 10px 40px;
             background-color: #e50914;
             color: #fff;
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
-            margin-top: 10px;
+            margin-top: 20px;
             transition: background-color 0.3s ease;
         }
         
@@ -141,7 +160,7 @@
         }
         
         .botao-trailer:hover {
-            background-color: #0056b3; /* Cor de destaque para o botão de assistir trailer */
+            background-color: #0056b3; 
             color: #fff;
         }
 
@@ -149,24 +168,23 @@
             background-color: #ff1e2d;
             color: #fff;
         }
+        
     </style>
 </head>
 <body>
- <!-- Barra de navegação -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <img class="logo" src="https://i.imgur.com/Jtyx9kh.png" target="_blank" alt="Logo" style="max-height: 40px;">
         </div>
         </div>
     </nav>
-    <div id="splash-screen">
+    <div id="splash-screen" class="fade-in">
         <div class="centered-content">
             <img class="logo" src="https://i.imgur.com/Jtyx9kh.png" target="_blank" alt="Logo">
             <h1>Carregando</h1>
         </div>
     </div>
 
-    <!-- Conteúdo do carrossel -->
     <div class="container mt-5">
         <div id="myCarousel" class="carousel slide carousel-vertical" data-ride="carousel" style="display: none;">
             <div class="carousel-inner">
@@ -176,7 +194,7 @@
                         <a class="botao" href="https://docs.google.com/forms/d/e/1FAIpQLSc5EjnOKsBV4Cm3wLtE1P7DmczJdBQKM9xTC6Kny-j-rAVtpQ/viewform" target="_blank">Assistir</a>
                        <!-- <a class="botao-trailer" href="URL_DO_TRAILER" target="_blank">Assistir Trailer</a> -->
                     </p>
-                   
+
                 </div>
                 
                 <div class="carousel-item">
@@ -197,6 +215,29 @@
                     <img class="movie-poster" src="https://i.imgur.com/9S0t8b8.jpg" alt="Chernobyl O Filme - Segredos de um desastre"><BR>
                     <p>
                       <a class="botao" href="https://docs.google.com/forms/d/e/1FAIpQLSdnMvwj-EcANKxqNqv7kswqOARI2Bsi3nhLFtnVHGvdNhufFg/viewform" target="_blank">Assistir</a>
+                    </p>
+                </div>
+                
+                <div class="carousel-item">
+                <p>Inteligência Artificial - Noite</p>
+                    <img class="movie-poster" src="https://i.imgur.com/9cZ3hXv.png" alt="Inteligência Artificial - Noite"><BR>
+                    <p>
+                      <a class="botao" href="https://docs.google.com/forms/d/e/1FAIpQLScM2kNK1k_nAaORzIJSosqr7tQ11_uRCzet_R2fUvsd2Udmkg/viewform" target="_blank">Assistir</a>
+                    </p>
+                </div>
+                
+                <div class="carousel-item">
+                    <img class="movie-poster" src="https://i.imgur.com/UI0tuRe.jpg" alt="Frankenweenie"<BR>
+                    <p>
+                      <a class="botao" href="https://docs.google.com/forms/d/e/1FAIpQLSc7ImVLpkw9eNmTKDtirwe9fhDil0BykONrFTG41yHgLmoCeg/viewform" target="_blank">Assistir</a>
+                    </p>
+                </div>
+                
+                <div class="carousel-item">
+                <p>Inteligência Artificial - Manhã</p>
+                    <img class="movie-poster" src="https://i.imgur.com/zSD1Pg4.png" alt="Inteligência Artificial - Manhã"><BR>
+                    <p>
+                      <a class="botao" href="https://docs.google.com/forms/d/e/1FAIpQLScM2kNK1k_nAaORzIJSosqr7tQ11_uRCzet_R2fUvsd2Udmkg/viewform" target="_blank">Assistir</a>
                     </p>
                 </div>
                 
@@ -295,21 +336,26 @@
         </div>
     </div>
 
-    <!-- Inclua os scripts necessários do Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        // Coloque seu código JavaScript para controlar a exibição do carrossel após a tela de splash aqui
-        setTimeout(function() {
-            document.getElementById("splash-screen").style.display = "none";
-            document.getElementById("myCarousel").style.display = "block"; // Exibir o carrossel
-        }, 3000); // Remova a tela de splash após 3 segundos
-    </script>
+    document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        var splashScreen = document.getElementById("splash-screen");
+        splashScreen.classList.add("fade-out");
 
+        splashScreen.addEventListener("animationend", function() {
+            splashScreen.style.display = "none"; // Oculta a tela de splash
+            document.getElementById("myCarousel").style.display = "block"; // Exibe o carrossel
+        });
+    }, 3000); 
+});
+
+
+</script>
     <style>
-        /* Estilos para a animação de fundo */
         @-webkit-keyframes AnimationName {
             0%{background-position:0% 50%}
             50%{background-position:100% 50%}
